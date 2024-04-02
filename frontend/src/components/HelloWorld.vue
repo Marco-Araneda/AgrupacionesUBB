@@ -1,4 +1,64 @@
 <template>
+  <!-- Toolbar -->
+  <v-toolbar density="comfortable">
+
+    <!-- Barra de búsqueda -->
+        <v-text-field
+          :loading="loading"
+          append-inner-icon="mdi-magnify"
+          density="compact"
+          label="Buscar..."
+          flat="true"
+          variant="solo"
+          hide-details
+          single-line
+          bg-color="gray"
+          @click:append-inner="onClick"
+          :style="{ 'margin-left': '20px' }"
+        ></v-text-field>
+
+    <v-spacer></v-spacer>
+    <v-spacer></v-spacer>
+    <v-spacer></v-spacer>
+
+    Marco Araneda
+
+    <v-btn icon>
+      <v-icon>mdi-account</v-icon>
+    </v-btn>
+
+    </v-toolbar>
+
+
+  <v-navigation-drawer expand-on-hover rail>
+
+    <v-img
+      :width="200"
+      src="https://i.imgur.com/awDq31D.png"
+    </v-img>
+
+    <v-divider></v-divider>
+
+      <v-list density="compact" nav>
+        <v-list-item
+          prepend-icon="mdi-folder"
+          title="My Files"
+          value="myfiles"
+        ></v-list-item>
+        <v-list-item
+          prepend-icon="mdi-account-multiple"
+          title="Shared with me"
+          value="shared"
+        ></v-list-item>
+        <v-list-item
+          prepend-icon="mdi-star"
+          title="Starred"
+          value="starred"
+        ></v-list-item>
+      </v-list>
+
+  </v-navigation-drawer>
+
   <v-container>
     <v-row class="text-center">
       <v-col cols="12">
